@@ -32,6 +32,7 @@ Docker化Asp.Net
         command=dnx . kestrel
 
 - 编写Dockerfile
+
         # 基础镜像
         FROM docker-asp.net
         # 维护人员
