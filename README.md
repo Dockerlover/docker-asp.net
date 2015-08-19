@@ -21,16 +21,31 @@ Docker化Asp.Net
         git clone git@github.com:aspnet/Home.git aspnet-Home
         cd aspnet-Home/samples/HelloWeb
 
-- 编写Dockerfile
+- 编写 supervisord.conf
 
+        [supervisord]
+        
+        nodaemon=true
+        
+        [program:home-app]
+        
+        command=dnx . kestrel
+
+- 编写Dockerfile
+        # 基础镜像
         FROM docker-asp.net
-        
+        # 维护人员
+        MAINTAINER  liuhong1.happy@163.com
+        # 复制代码
         COPY . /app
-        WORKDIR /app
-        RUN ["dnu", "restore"]
-        
+        # 安装依赖包
+        RUN dnu restore
+        # 暴露5004
         EXPOSE 5004
-        ENTRYPOINT ["dnx", ".", "kestrel"]
+        # 复制supervisord.conf
+        COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+        # 启动supervisord
+        CMD ["/usr/bin/supervisord"]
 
 - 构建镜像
 
