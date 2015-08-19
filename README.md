@@ -19,7 +19,7 @@ Docker化Asp.Net
 - clone实例代码
 
         git clone git@github.com:aspnet/Home.git aspnet-Home
-        cd aspnet-Home/samples/HelloWeb
+        cd aspnet-home/samples/latest/HelloWeb
 
 - 编写 supervisord.conf
 
