@@ -13,7 +13,7 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E03280
 RUN echo "deb http://download.mono-project.com/repo/debian wheezy main" > /etc/apt/sources.list.d/mono-xamarin.list \
   && apt-get update && apt-get install -y mono-devel ca-certificates-mono fsharp mono-vbnc nuget zip autoconf automake libtool \
 	&& rm -rf /var/lib/apt/lists/*
-# 安装DNVM
+# 安装DNVM和DNX
 RUN curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | DNX_USER_HOME=$DNX_USER_HOME DNX_BRANCH=v$DNX_VERSION sh
 RUN bash -c "source $DNX_USER_HOME/dnvm/dnvm.sh \
 	&& dnvm install $DNX_VERSION -a default \
