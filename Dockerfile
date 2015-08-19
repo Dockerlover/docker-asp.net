@@ -19,7 +19,6 @@ RUN bash -c "source $DNX_USER_HOME/dnvm/dnvm.sh \
 	&& dnvm install $DNX_VERSION -a default \
 	&& dnvm alias default | xargs -i ln -s $DNX_USER_HOME/runtimes/{} $DNX_USER_HOME/runtimes/default"
 # 安装libuv
-RUN apt-get update &&  apt-get install -y make && rm -rf /var/lib/apt/lists/*
 RUN LIBUV_VERSION=1.4.2 \
 	&& curl -sSL https://github.com/libuv/libuv/archive/v${LIBUV_VERSION}.tar.gz | tar zxfv - -C /usr/local/src \
 	&& cd /usr/local/src/libuv-$LIBUV_VERSION \
