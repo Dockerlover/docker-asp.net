@@ -1,5 +1,5 @@
 # 基础镜像
-FROM docker-ubuntu
+FROM liuhong1happy/docker-ubuntu:2015.8.10
 # 维护人员
 MAINTAINER liuhong1.happy@163.com
 # 添加环境变量
