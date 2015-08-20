@@ -6,6 +6,10 @@ Docker化Asp.Net
 
 - 2015/8/19 继承基础镜像docker-asp.net
 
+## 直接pull镜像
+
+        docker pull liuhong1happy/docker-asp.net
+
 ## 使用方法
 
 - 获取代码并构建
