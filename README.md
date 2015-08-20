@@ -8,7 +8,7 @@ Docker化Asp.Net
 
 ## 直接pull镜像
 
-        docker pull liuhong1happy/docker-asp.net
+    docker pull liuhong1happy/docker-asp.net
 
 ## 使用方法
 
